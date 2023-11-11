@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Nav() {
     return (
         <>
@@ -21,28 +23,27 @@ export default function Nav() {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a
-                                    className="nav-link active"
-                                    aria-current="page"
-                                    href="/"
-                                >
+                                <Link className="nav-link" to="/">
                                     Login
-                                </a>
+                                </Link>
                             </li>
+
                             <li className="nav-item">
-                                <a className="nav-link" href="/pages/principal/">
+                                <Link className="nav-link" to="/principal">
                                     Principal
-                                </a>
+                                </Link>
                             </li>
+
                             <li className="nav-item">
-                                <a className="nav-link" href="/pages/dashboard/">
+                                <Link className="nav-link" to="/dashboard">
                                     Dashboard
-                                </a>
+                                </Link>
                             </li>
+
                             <li className="nav-item">
-                                <a className="nav-link" href="/pages/avaliacao/">
+                                <Link className="nav-link" to="/avaliacao">
                                     Avaliação
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

@@ -1,8 +1,12 @@
-import AppRoutes from "@/Routes"
+import AppRoutes from "@/Routes";
+
+import "@styles/app.css";
 
 function App() {
     return (
-        <AppRoutes />
+        <>
+            <AppRoutes />
+        </>
     );
 }
 
