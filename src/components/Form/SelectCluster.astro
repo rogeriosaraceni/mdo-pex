@@ -1,0 +1,41 @@
+---
+interface Props {
+    col?: string;
+}
+
+const { col } = Astro.props;
+
+const valuesSelect = [
+    {
+        value: "1",
+        name: "Cluster 1",
+    },
+    {
+        value: "2",
+        name: "Cluster 2",
+    },
+    {
+        value: "3",
+        name: "Cluster 3",
+    },
+    {
+        value: "4",
+        name: "Cluster 4",
+    },
+    {
+        value: "5",
+        name: "Cluster 5",
+    },
+];
+---
+
+<label class={col}>Cluster:
+    <select name="cluster" id="" class="form-select" required>
+        <option value=""></option>
+        {
+            valuesSelect.map(({ value, name }) => (
+                <option value={value}>{name}</option>
+            ))
+        }
+    </select>
+</label>

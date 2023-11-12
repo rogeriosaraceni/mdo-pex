@@ -1,0 +1,76 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Header from '@includes/Header.astro';
+
+import ContentSelecao from './_ContentSelecao.astro'
+
+import ChartCluster from './_ChartCluster.astro';
+import ChartUnidade from './_ChartUnidade.astro';
+import ChartCategoriaNacional from './_ChartCategoriaNacional.astro';
+import ChartCategoriaCluster from './_ChartCategoriaCluster.astro';
+import ChartCategoriaUnidade from './_ChartCategoriaUnidade.astro';
+import BtnPrincipal from '@components/Btns/BtnPrincipal.astro';
+---
+
+<style is:inline>
+    .box-chart {
+        width: 100%;
+    }
+
+    .box-chart.boxCluster{ height: 350px;}
+    .box-chart.boxUnidade { height: 350px;}
+    .box-chart.boxCategoriaNacional{ height: 400px; margin-top: 4.4rem;}
+    .box-chart.boxCategoriaCluster{ height: 400px;}
+    .box-chart.boxCategoriaUnidade{ height: 400px}
+
+    .title-chart{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+</style>
+
+<script is:inline src="/assets/vendor/amcharts4/core.js"></script>
+<script is:inline src="/assets/vendor/amcharts4/charts.js"></script>
+<script is:inline src="/assets/vendor/amcharts4/animated.js"></script>
+
+<Layout>
+    <header data-el="top-fixed" class="header-app navbar navbar-expand-xl">
+        <Header />
+    </header>
+
+    <main data-el="main-app" class="main-app">
+        <section class="container-fluid">
+            <nav aria-label="breadcrumb" class="breadcrumb-app">
+                <div class="d-flex align-items-center justify-content-between gap-1">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="/principal/"><i class="bi bi-house-fill"></i></a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                    </ol>
+
+                    <BtnPrincipal />
+                </div>
+            </nav>
+        </section>
+
+        <section class="container-fluid">
+            <ContentSelecao />
+
+            <ChartCluster />
+            <ChartUnidade />
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <ChartCategoriaNacional />
+                </div>
+
+                <div class="col-lg-6">
+                    <ChartCategoriaCluster />
+                </div>
+            </div>
+
+            <ChartCategoriaUnidade />
+        </section>
+    </main>
+</Layout>

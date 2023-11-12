@@ -1,0 +1,29 @@
+[data-bs-theme=light] {
+
+    --bs-body-color: #444;
+
+    .card{
+        --bs-card-bg: #fff;
+    }
+
+
+    --app-body-bg: #efefef;
+    --app-bg-footer: #fff;
+}
+
+
+
+
+[data-bs-theme=dark] {
+
+    --bs-body-color: #bbb;
+
+
+    --app-body-bg: #212529;
+    --app-bg-footer: #2B3035;
+
+    .card{
+        --bs-card-bg: #2B3035;
+    }
+
+}

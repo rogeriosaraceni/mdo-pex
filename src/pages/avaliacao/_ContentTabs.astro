@@ -1,0 +1,126 @@
+---
+import CardCardBody from '@componentsLayout/CardCardBody.astro'
+import TabsContent from "@components/Layout/TabsContent.astro";
+
+import Tab1 from "./_Tabs/Tab1.astro";
+import Tab2 from "./_Tabs/Tab2.astro";
+import Tab3 from "./_Tabs/Tab3.astro";
+import Tab4 from "./_Tabs/Tab4.astro";
+import Tab5 from "./_Tabs/Tab5.astro";
+import Tab6 from "./_Tabs/Tab6.astro";
+
+const tabs = [
+    {
+        name: "Gestão Administrativa",
+        classText: "nav-link active",
+        id: "tab-1",
+        dataBsTarget: "#tab-1-pane",
+        ariaControls: "tab-1-pane",
+        ariaSelected: true,
+    },
+    {
+        name: "Financeiro",
+        classText: "nav-link",
+        id: "tab-2",
+        dataBsTarget: "#tab-2-pane",
+        ariaControls: "tab-2-pane",
+        ariaSelected: false,
+    },
+    {
+        name: "Jurídico",
+        classText: "nav-link",
+        id: "tab-3",
+        dataBsTarget: "#tab-3-pane",
+        ariaControls: "tab-3-pane",
+        ariaSelected: false,
+    },
+    {
+        name: "Categoria 4",
+        classText: "nav-link",
+        id: "tab-4",
+        dataBsTarget: "#tab-4-pane",
+        ariaControls: "tab-4-pane",
+        ariaSelected: false,
+    },
+    {
+        name: "Categoria 5",
+        classText: "nav-link",
+        id: "tab-5",
+        dataBsTarget: "#tab-5-pane",
+        ariaControls: "tab-5-pane",
+        ariaSelected: false,
+    },
+    {
+        name: "Categoria 6",
+        classText: "nav-link",
+        id: "tab-6",
+        dataBsTarget: "#tab-6-pane",
+        ariaControls: "tab-6-pane",
+        ariaSelected: false,
+    }
+]
+---
+
+<CardCardBody>
+    <div class="d-flex">
+        <div class="flex-grow-1">
+            <ul class="nav nav-tabs" role="tablist">
+                {
+
+                    tabs.map(({ name, id, dataBsTarget, ariaControls, ariaSelected, classText }) => (
+                        <li class="nav-item" role="presentation">
+                            <button
+                                class={classText}
+                                id={id}
+                                data-bs-toggle="tab"
+                                data-bs-target={dataBsTarget}
+                                type="button"
+                                role="tab"
+                                aria-controls={ariaControls}
+                                aria-selected={ariaSelected}
+                            >
+                                {name}
+                            </button>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+
+        <div class="d-flex align-items-end">
+            <div
+                class="btn btn-light p-1 border rounded-0 rounded-top"
+                data-bs-toggle="tooltip-aval"
+                data-bs-title="3. A Operação está garantindo 100% do item.<br>1. A Operação está garantindo parcialmente o item.<br>0. A Operação NÃO garante o item."
+            >
+                <i class="bi bi-info-circle-fill text-secondary"></i> Pontuação
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <TabsContent classActive="show active", id="tab-1-pane", ariaLabelledby="tab-1">
+            <Tab1 />
+        </TabsContent>
+
+        <TabsContent id="tab-2-pane", ariaLabelledby="tab-2">
+            <Tab2 />
+        </TabsContent>
+
+        <TabsContent id="tab-3-pane", ariaLabelledby="tab-2">
+            <Tab3 />
+        </TabsContent>
+
+        <TabsContent id="tab-4-pane", ariaLabelledby="tab-4">
+            <Tab4 />
+        </TabsContent>
+
+        <TabsContent id="tab-5-pane", ariaLabelledby="tab-5">
+            <Tab5 />
+        </TabsContent>
+
+        <TabsContent id="tab-6-pane", ariaLabelledby="tab-6">
+            <Tab6 />
+        </TabsContent>
+    </div>
+</CardCardBody>
