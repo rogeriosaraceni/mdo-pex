@@ -87,7 +87,7 @@
 
 .principal-cards .link-card:hover figure {
     color: #fff;
-    background-color: var(--color-primary-red);
+    background-color: var(--color-red-400);
 }
 
 .principal-cards .link-card:hover figure .content-icon {

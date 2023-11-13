@@ -20,7 +20,7 @@ table>thead>tr>th / table>tfoot>tr>th
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
     color: #fff;
-    background-color: var(--color-primary-yellow);
+    background-color: var(--color-yellow-400);
 }
 
 .table>thead>tr>th,
@@ -50,7 +50,7 @@ tr.row-striped td {
 icon-tab
 -------------------------------------------------------------------- */
 .icon-tab:hover {
-    color: var(--color-primary-yellow);
+    color: var(--color-yellow-400);
 }
 
 /* --------------------------------------------------------------------
@@ -84,8 +84,8 @@ dataTables-custom - page-link
 -------------------------------------------------------------------- */
 .dataTables_paginate .active>.page-link,
 .dataTables_paginate .page-link.active {
-    background-color: var(--color-primary-yellow);
-    border-color: var(--color-primary-yellow);
+    background-color: var(--color-yellow-400);
+    border-color: var(--color-yellow-400);
 }
 .dataTables_paginate .disabled>.page-link,
 .dataTables_paginate .page-link.disabled {
