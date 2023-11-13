@@ -29,21 +29,11 @@
 
         <a class="navbar-brand pt-0" href="/principal/">
             <div class="d-flex align-items-center gap-2">
-                <div class="position-relative" style="height: 65px;">
-                    <img
-                    width="auto"
-                    height="100px"
-                    class="logo-svg"
-                    src="/assets/images/logo-pex.png"
-                    >
+                <div class="box-logo-pex">
+                    <img class="img-fluid" src="/assets/images/logo-pex.png">
                 </div>
 
-                <img
-                width="auto"
-                height="60px"
-                class="logo-svg"
-                src="/assets/images/logo-mdo.png"
-                >
+                <img class="img-fluid logo-mdo" src="/assets/images/logo-mdo.png">
             </div>
         </a>
     </div>
@@ -58,7 +48,7 @@
                 data-bs-toggle="dropdown"
                 data-bs-display="static">
 
-               <svg class="bi-svg my-1 theme-icon-active">
+                <svg class="bi-svg-theme my-1 theme-icon-active">
                     <use href="#circle-half"></use>
                 </svg>
             </button>
@@ -66,11 +56,11 @@
             <ul class="dropdown-menu dropdown-menu-animation dropdown-menu-end p-0 overflow-hidden border-0 shadow" aria-labelledby="bd-theme">
                 <li>
                     <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light">
-                        <svg class="bi-svg me-2 opacity-50 theme-icon">
+                        <svg class="bi-svg-theme me-2 opacity-50 theme-icon">
                             <use href="#sun-fill"></use>
                         </svg>
                         Light
-                        <svg class="bi-svg ms-auto d-none">
+                        <svg class="bi-svg-theme ms-auto d-none">
                             <use href="#check2"></use>
                         </svg>
                     </button>
@@ -78,11 +68,11 @@
 
                 <li>
                     <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
-                        <svg class="bi-svg me-2 opacity-50 theme-icon">
+                        <svg class="bi-svg-theme me-2 opacity-50 theme-icon">
                             <use href="#moon-stars-fill"></use>
                         </svg>
                         Dark
-                        <svg class="bi-svg ms-auto d-none">
+                        <svg class="bi-svg-theme ms-auto d-none">
                             <use href="#check2"></use>
                         </svg>
                     </button>
@@ -130,13 +120,3 @@
         </li>
     </ul>
 </div>
-
-<style>
-    .bi-svg {
-        width: 1.25em;
-        height: 1.25em;
-        line-height: 1;
-        vertical-align: -0.125em;
-        fill: currentcolor;
-    }
-</style>

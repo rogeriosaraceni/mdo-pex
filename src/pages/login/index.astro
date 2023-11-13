@@ -1,7 +1,7 @@
 ---
 import Head from '@includes/Head.astro';
-import BoxLeft from './_parts/boxLeft.astro';
-import BoxRight from './_parts/boxRight.astro';
+import BoxBg from './boxBg.astro';
+import BoxForm from './boxForm.astro';
 
 import '@styles/login.css'
 ---
@@ -11,9 +11,9 @@ import '@styles/login.css'
     <Head />
 
     <body class="body-login">
-        <main class="wrapper-grid">
-            <BoxLeft />
-            <BoxRight />
+        <main class="wrapper-page shadow">
+            <BoxForm />
+            <BoxBg />
         </main>
     </body>
 </html>
