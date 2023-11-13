@@ -82,6 +82,7 @@ import SelectUnidade from '@components/Form/SelectUnidade.astro';
         categoryAxis.renderer.labels.template.verticalCenter = "middle";
         categoryAxis.renderer.labels.template.rotation = -45;
         categoryAxis.renderer.labels.template.fontSize = 11;
+        categoryAxis.renderer.labels.template.fill = am4core.color("#888");
 
         /* Create value axis */
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
@@ -96,7 +97,6 @@ import SelectUnidade from '@components/Form/SelectUnidade.astro';
         columnSeries.dataFields.valueY = "posicao";
         columnSeries.name = "Categorias";
         columnSeries.dataFields.categoryX = "categoria";
-        //columnSeries.fill = am4core.color("#12B2A6");
 		columnSeries.tooltip.label.textAlign = "middle";
 		columnSeries.columns.template.tooltipText = "[#fff font-size: 14px]{name} {categoryX}:\n[/][#fff font-size: 16px]{valueY}"
         columnSeries.columns.template.propertyFields.fillOpacity = "fillOpacity";
@@ -111,6 +111,7 @@ import SelectUnidade from '@components/Form/SelectUnidade.astro';
         valueLabel.label.color = "#000";
         valueLabel.label.fontSize = 11;
         valueLabel.dy = -5;
+        valueLabel.label.fill = am4core.color('#888');
 
         function lineMediaRegional(field, name, color) {
 			var lineSeries1 = chart.series.push(new am4charts.LineSeries());
@@ -171,6 +172,8 @@ import SelectUnidade from '@components/Form/SelectUnidade.astro';
 
         // Add legend
         chart.legend = new am4charts.Legend();
+        chart.legend.labels.template.fill = am4core.color("#888");
+        chart.legend.valueLabels.template.fill = am4core.color("#888");
 
         // tamanho da legenda
         var markerTemplate = chart.legend.markers.template;
@@ -178,7 +181,6 @@ import SelectUnidade from '@components/Form/SelectUnidade.astro';
         markerTemplate.height = 20;
 
         chart.data = data;
-
 
         // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
         columnSeries.columns.template.adapter.add("fill", function(fill, target){

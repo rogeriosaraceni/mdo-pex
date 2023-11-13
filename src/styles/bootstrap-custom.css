@@ -35,8 +35,8 @@ btn
 
 .btn-primary {
     --app-color: #fff;
-    --app-bg-color: var(--color-yellow-400);
-    --app-bg-hover-color: var(--color-300-orange);
+    --app-bg-color: var(--color-orange-400);
+    --app-bg-hover-color: var(--color-orange-500);
 
     --bs-btn-color: var(--app-color);
     --bs-btn-bg: var(--app-bg-color);

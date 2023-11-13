@@ -55,6 +55,7 @@ import CardCardBody from '@componentsLayout/CardCardBody.astro'
         categoryAxis.renderer.labels.template.verticalCenter = "middle";
         categoryAxis.renderer.labels.template.rotation = 0;
         categoryAxis.renderer.labels.template.fontSize = 11;
+        categoryAxis.renderer.labels.template.fill = am4core.color("#888");
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.renderer.grid.template.disabled = true;
@@ -65,7 +66,7 @@ import CardCardBody from '@componentsLayout/CardCardBody.astro'
         series.dataFields.valueY = "posicao";
         series.dataFields.categoryX = "cluster";
         series.name = "Posicao";
-        series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}%[/]";
+        tooltipText = "{categoryX}: [bold]{valueY}%[/]";
         series.columns.template.fillOpacity = .8;
         series.columns.template.strokeWidth = 0;
 
@@ -78,7 +79,7 @@ import CardCardBody from '@componentsLayout/CardCardBody.astro'
         bullet.dy = -5;
         bullet.fontSize = 11;
         bullet.label.text = '{valueY}%';
-        bullet.label.fill = am4core.color('#000');
+        bullet.label.fill = am4core.color('#888');
 
         // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
         series.columns.template.adapter.add("fill", function(fill, target){

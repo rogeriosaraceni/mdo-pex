@@ -17,6 +17,7 @@ variables
 
     --color-orange-300:#f8ac5a;
     --color-orange-400:#f68f24;
+    --color-orange-500:#db7d17;
 
     --color-blue-300:  #56baf8;
     --color-blue-400:  #009cff;
@@ -39,6 +40,7 @@ class text color
 
 .text-orange-300{ color: var(--color-orange-300);}
 .text-orange-400{ color: var(--color-orange-400);}
+.text-orange-500{ color: var(--color-orange-500);}
 
 .text-blue-300  { color: var(--color-blue-300);}
 .text-blue-400  { color: var(--color-blue-400);}
@@ -60,6 +62,7 @@ class bg color
 
 .bg-orange-300{ background-color: var(--color-orange-300);}
 .bg-orange-400{ background-color: var(--color-orange-400);}
+.bg-orange-500{ background-color: var(--color-orange-500);}
 
 .bg-blue-300  { background-color: var(--color-blue-300);}
 .bg-blue-400  { background-color: var(--color-blue-400);}
