@@ -61,10 +61,33 @@ const tabs = [
 ]
 ---
 
+<style is:inline>
+    @media(max-width: 768px){
+        .tabs-avaliacao {
+            gap: 0.2rem;
+        }
+        .tabs-avaliacao li{
+            width: 32%;
+        }
+        .tabs-avaliacao li .nav-link{
+            width: 100%;
+            padding: 0.4rem 0.2rem;
+            font-size: 0.8rem;
+            border-color: var(--bs-nav-tabs-link-active-border-color);
+        }
+    }
+
+    @media(max-width: 576px){
+        .tabs-avaliacao li{
+            width: 48%;
+        }
+    }
+</style>
+
 <CardCardBody>
     <div class="d-flex">
         <div class="flex-grow-1">
-            <ul class="nav nav-tabs" role="tablist">
+            <ul class="nav nav-tabs tabs-avaliacao" role="tablist">
                 {
 
                     tabs.map(({ name, id, dataBsTarget, ariaControls, ariaSelected, classText }) => (
@@ -89,11 +112,12 @@ const tabs = [
 
         <div class="d-flex align-items-end">
             <div
-                class="btn btn-light p-1 border rounded-0 rounded-top"
+                class="btn btn-light p-1 border rounded-0 rounded-top d-flex gap-1"
                 data-bs-toggle="tooltip-aval"
                 data-bs-title="3. A Operação está garantindo 100% do item.<br>1. A Operação está garantindo parcialmente o item.<br>0. A Operação NÃO garante o item."
             >
-                <i class="bi bi-info-circle-fill text-secondary"></i> Pontuação
+                <i class="bi bi-info-circle-fill text-secondary"></i>
+                <span class="d-none d-lg-block">Pontuação</span>
             </div>
         </div>
     </div>

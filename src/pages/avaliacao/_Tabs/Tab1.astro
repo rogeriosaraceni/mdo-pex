@@ -114,10 +114,55 @@ const rows5s = [
             background-color: #1a1a1a;
         }
     }
+
+
+    @media (max-width: 768px) {
+        .table.table-grid thead{
+            display: none;
+        }
+
+        .table.table-grid tbody tr{
+            border: 1px solid #dad6eb;
+            border-radius: 5px;
+            display: block;
+            padding: 1rem;
+            margin: 0 0.5rem 1.5rem;
+        }
+        .table.table-grid tbody tr td{
+            display: flex;
+            padding: 5px;
+            border: none;
+            border-bottom: 1px solid #eee;
+            line-height: 1.2;
+        }
+        .table.table-grid tbody tr td::before{
+            color: #8a8a87;
+            content: attr(data-label);
+            font-weight: bold;
+            text-align: left;
+            margin-right: 1rem;
+            width: 70px;
+            border-right: 1px solid #eee;
+        }
+
+        .table-grid tbody tr.aval-line-sub td:first-child::before,
+        .table-grid tbody tr.aval-line-sub td:last-child::before {
+            display: none;
+        }
+
+        .table.table-grid tbody tr td .text-data{
+            flex: 1;
+            display: flex;
+        }
+
+        .table.table-grid tbody tr td.selectTable select{
+            max-width: 150px;
+        }
+    }
 </style>
 
 <div class="table-responsive" style="max-height: 500px">
-    <table class="table table-bordered table-fixed small text-center fixThead">
+    <table class="table table-bordered table-fixed small text-center fixThead table-grid" data-table="grid">
         <thead>
             <th style="width: 600px">Item</th>
             <th style="width: 080px">Adicionais</th>
@@ -128,43 +173,49 @@ const rows5s = [
 
         <tbody>
             <tr class="aval-line-sub">
-                <td colspan="2" class="text-start"></td>
-                <td>9,0%</td>
-                <td>9</td>
+                <td colspan="2" class="text-start">Cod.</td>
+                <td data-label="Peso">9,0%</td>
+                <td data-label="Pontos">9</td>
                 <td></td>
             </tr>
             {
                 rows5s.map(({ item, descricao, peso, pontos }) => (
                     <tr>
-                        <td class="text-start">
-                            <div class="d-flex align-items-baseline justify-content-between gap-1">
-                                <div>{item}</div>
+                        <td class="text-start" data-label="Item">
+                            <div class="text-data">{item}</div>
+                        </td>
+
+                        <td data-label="Adicionais">
+                            <div class="text-data">
+                                <ul class="list-add">
+                                    <li>
+                                        <div data-bs-toggle="tooltip-aval" data-bs-title={descricao}>
+                                            <i class="bi bi-info-circle-fill text-secondary icon-tab fs-6"></i>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <BtnAnexo />
+                                    </li>
+
+                                    <li>
+                                        <BtnVideo />
+                                    </li>
+                                </ul>
                             </div>
                         </td>
 
-                        <td>
-                            <ul class="list-add">
-                                <li>
-                                    <div data-bs-toggle="tooltip-aval" data-bs-title={descricao}>
-                                        <i class="bi bi-info-circle-fill text-secondary icon-tab fs-6"></i>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <BtnAnexo />
-                                </li>
-
-                                <li>
-                                    <BtnVideo />
-                                </li>
-                            </ul>
+                        <td data-label="Peso">
+                            <div class="text-data">{peso}</div>
+                        </td>
+                        <td data-label="Pontos">
+                            <div class="text-data">{pontos}</div>
                         </td>
 
-                        <td>{peso}</td>
-                        <td>{pontos}</td>
-
-                        <td>
-                            <SelectPontos />
+                        <td data-label="Pontos Alcançado" class="selectTable">
+                            <div class="text-data">
+                                <SelectPontos />
+                            </div>
                         </td>
                     </tr>
                 ))
@@ -185,4 +236,19 @@ const rows5s = [
             $('.tooltip-inner').addClass('tooltip-aval');
         });
     })
+
+    let tableGrid = document.querySelector('[data-table="grid"]')
+
+    function toogleFixHead() {
+        if(window.innerWidth <= 768){
+            tableGrid.classList.remove('fixThead')
+            tableGrid.style.minWidth = 0
+        }
+        else {
+            tableGrid.classList.add('fixThead')
+        }
+    }
+
+    addEventListener('load', toogleFixHead)
+    addEventListener('resize', toogleFixHead)
 </script>
