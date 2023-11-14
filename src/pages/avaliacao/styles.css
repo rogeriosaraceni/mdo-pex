@@ -1,0 +1,104 @@
+@media(max-width: 768px){
+    .tabs-avaliacao {
+        gap: 0.2rem;
+    }
+    .tabs-avaliacao li{
+        width: 32%;
+    }
+    .tabs-avaliacao li .nav-link{
+        width: 100%;
+        padding: 0.4rem 0.2rem;
+        font-size: 0.8rem;
+        border-color: var(--bs-nav-tabs-link-active-border-color);
+    }
+}
+
+@media(max-width: 576px){
+    .tabs-avaliacao li{
+        width: 48%;
+    }
+}
+
+
+
+
+
+.aval-line-sub td{
+    font-weight: bold;
+}
+.tooltip-aval{
+    max-width: 400px;
+    text-align: left;
+}
+
+.list-add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem
+}
+.list-add li{
+    width: 20px;
+    line-height: 1;
+}
+.list-add li a{ display: block;}
+
+[data-bs-theme=light] {
+    .aval-line-sub td{
+        background-color: #eee;
+    }
+}
+
+[data-bs-theme=dark] {
+    .aval-line-sub td{
+        background-color: #1a1a1a;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .table.table-grid thead{
+        display: none;
+    }
+
+    .table.table-grid tbody tr{
+        border: 1px solid #dad6eb;
+        border-radius: 5px;
+        display: block;
+        padding: 1rem;
+        margin: 0 0.5rem 1.5rem;
+    }
+    .table.table-grid tbody tr td{
+        display: flex;
+        padding: 5px;
+        border: none;
+        border-bottom: 1px solid #eee;
+        line-height: 1.2;
+    }
+    .table.table-grid tbody tr td::before{
+        color: #8a8a87;
+        content: attr(data-label);
+        font-weight: bold;
+        text-align: left;
+        margin-right: 1rem;
+        width: 70px;
+        border-right: 1px solid #eee;
+    }
+
+    .table-grid tbody tr.aval-line-sub td:first-child::before,
+    .table-grid tbody tr.aval-line-sub td:last-child::before {
+        display: none;
+    }
+
+    .table.table-grid tbody tr td .text-data{
+        flex: 1;
+        display: flex;
+    }
+
+    .table.table-grid tbody tr td.selectTable select{
+        max-width: 150px;
+    }
+}
